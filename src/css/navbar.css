@@ -1,0 +1,112 @@
+.logo {
+  height: 45.6px;
+  width: 114px;
+  margin: 20px 0px 0px 30px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  border-bottom: 2px solid var(--primary-color);
+}
+.notification_btn {
+  display: flex;
+  width: 50%;
+  gap: 15px;
+  align-items: center;
+}
+.searchbar-box {
+  display: flex;
+  border: 1px solid var(--primary-color-1);
+  box-shadow: 0px 4px 0px var(--primary-color);
+  border-radius: 30px;
+  height: 43px;
+  width: 480px;
+  margin-bottom: 7px;
+}
+.search-bar-NC::-webkit-input-placeholder {
+  color: var(--primary-color);
+
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
+  font-size: 0.9em;
+}
+
+.search-bar {
+  /* border-radius: 0px 30px 30px 0px; */
+  background: var(--secondary-color);
+  border-left: 2px solid var(--primary-color);
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  width: 92%;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.search-bar:focus {
+  outline: none;
+}
+.searchbar-logo {
+  margin: 8px;
+}
+.btn-icon {
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background-color: var(--secondary-color);
+  padding: 8px;
+  border-radius: 50%;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px var(--primary-color-1);
+  cursor: pointer;
+}
+.btn-icon path:hover {
+  fill: var(--primary-color);
+}
+
+.btn-icon:active,
+.btn-icon:hover {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px var(--primary-color);
+}
+.profile {
+  display: flex;
+  position: absolute;
+  background-color: var(--secondary-color);
+  width: 200px;
+  height: 200px;
+  top: 93px;
+  border: 2px solid var(--primary-color);
+  z-index: 1;
+  margin-left: -158px;
+  border-radius: 10px;
+}
+.delete-btn {
+  padding-top: 27rem;
+}
+.triangleShape {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  transform: rotate(45deg);
+  background: var(--secondary-color);
+  top: -16.125px;
+  border-radius: 2.2px;
+  left: 153px;
+  border-right: none;
+  border-bottom: none;
+}
+input.search-bar::-webkit-input-placeholder {
+  /* background-color: var(--secondary-color); */
+  color: var(--secondary-color);
+}
+.search-bar::placeholder {
+  color: var(--primary-color);
+  /* background-color: var(--secondary-color); */
+}
+.logo_box {
+  margin: 1rem 0 0 1.5rem;
+  height: 6rem;
+  width: 15rem;
+}

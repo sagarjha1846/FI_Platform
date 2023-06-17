@@ -1,0 +1,55 @@
+.case_cards {
+  height: 150px;
+  width: 300px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  margin: 4.5rem 0rem 0rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.case_cards:hover {
+  background: url(../images/case-card.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: var(--primary-color);
+  border-style: solid;
+  border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
+  cursor: pointer;
+}
+/* path:hover{
+    fill: #fff;
+} */
+
+/* .case_arrow:hover {
+    fill: #fff;
+} */
+
+.hover-img {
+  overflow: scroll;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.case_title_home {
+  font-size: 4.4rem;
+  width: 50px;
+  margin-left: 20px;
+  /* height: 100%; */
+  z-index: 1;
+  line-height: 4rem;
+  font-weight: 400;
+}
+
+.case_arrow {
+  margin-right: 10px;
+}
+.case_arrow path {
+  fill: var(--primary-color);
+}
+.noti-data h2 {
+  padding: 2rem 0rem 1.5rem 2rem;
+}

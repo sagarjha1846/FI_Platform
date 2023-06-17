@@ -1,0 +1,88 @@
+.navigation {
+  color: var(--primary-color);
+  /* border: 1px solid transparent; */
+  height: 40rem;
+  width: 7rem;
+  border-radius: 12px;
+  border-color: var(--primary-color);
+  /* margin: -5px 60
+  px -4px 8px; */
+  /* padding: 4px; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 0.8rem; */
+  background-color: var(--secondary-color);
+}
+
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+}
+
+.navigation {
+  border: 2px solid var(--primary-color);
+}
+.menu {
+  margin-top: 2.5em;
+}
+
+/* .btn_fullscreen{
+     -webkit-backdrop-filter: blur(15px); 
+     backdrop-filter: blur(15px); 
+    background: #fff;
+    border-radius: 3rem;
+    bottom: 1.5rem;
+    display: block;
+    gap: .8rem;
+    left: 50%;
+    padding: .5rem 1.1rem;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: -webkit-max-content;
+    width: max-content;
+    z-index: 2 */
+
+.toolbtn {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 1em;
+  padding: 0.35em 0.3em 0em 0.35em;
+}
+.toolbtn1 {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 1em;
+  padding: 0.57em;
+}
+.toolbtn1:hover svg path {
+  fill: #00ffff;
+}
+
+.toolbtn:hover svg path {
+  fill: #00ffff;
+}
+
+.btn {
+  display: flex;
+  gap: 1rem;
+}
+.btnicon {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.toolSection-container {
+  height: 83vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+}
