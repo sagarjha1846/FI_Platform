@@ -21,6 +21,7 @@ code {
     monospace;
 }
 
+
 /* .app {
   height: 100%;
   display: flex;
@@ -40,4 +41,14 @@ code {
 
 .node {
   transition: transform 0.3s ease-in-out;
+}
+
+
+.ant-menu-dark{
+  background-color: #1C1C1C;
+}
+
+
+.ant-menu-dark>.ant-menu-sub{
+  background-color: #1C1C1C;
 }

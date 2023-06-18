@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import constants from '../constant/routesConstant';
 import axios from 'axios';
-import { useSelect } from '@mui/base';
+import { useSelector } from 'react-redux';
 
 const columns = [
   { field: 'id', headerName: 'ID', flex: 1 },
@@ -25,7 +25,7 @@ export default function Table() {
   const [page, setPage] = useState(1);
   const [rows, setRows] = useState([]);
   const { backendURL } = constants;
-  const { token } = useSelect((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   useEffect(() => {
     axios

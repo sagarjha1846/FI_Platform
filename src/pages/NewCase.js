@@ -34,6 +34,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Ransomware from './Ransomware';
 import { logOut } from '../store/features/auth/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Form, Input, Modal, message } from 'antd';
+import { async } from 'q';
 // import { useEffect } from 'react';
 
 const NewCase = () => {
@@ -61,6 +63,13 @@ const NewCase = () => {
   const [mode, setMode] = useState(true);
   const [activeTab, setActiveTab] = useState(1);
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+  const [confirmLoading, setConfirmLoading] = useState(false);
+  const [modalText, setModalText] = useState('');
+  const [nodeInfoList, setNodeInfoList] = useState([]);
+  const showModal = () => {
+    setOpen(true);
+  };
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -122,25 +131,25 @@ const NewCase = () => {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-  const saveNode = () => {
+
+  const saveNode = async () => {
+    setConfirmLoading(true);
     if (nodes.length > 0 && edges.length > 0) {
       const data = {
         edges,
         nodes,
         caseid: uuidv4(),
-        casename: nodeInfo ? nodeInfo.query : 'Sunny',
+        casename: modalText,
       };
-      console.log(data);
-      axios
-        .post(`${backendURL}newcase.php`, data, {
-          headers: {
-            Authorization: token,
-          },
-        })
-        .then((res) => alert('Node was saved'))
-        .catch((err) => console.log(err));
+      const result = await axios.post(`${backendURL}newcase.php`, data, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      return result;
     } else {
-      alert('No node is present in the canvas to be saved!');
+      const error = 'No node is present in the canvas to be saved!';
+      throw error;
     }
   };
 
@@ -157,14 +166,17 @@ const NewCase = () => {
       })
       .then((response) => {
         setNodeInfo({ query: search, data: response?.data });
-
+        setNodeInfoList([
+          ...nodeInfoList,
+          { query: search, data: response?.data },
+        ]);
         setNodes((prev) => [
           ...prev,
           {
             id: search,
             type: 'MyCustomNode',
             data: { label: search },
-            position: { x: 250, y: 0 },
+            position: { x: Math.random() * 500, y: Math.random() * 500 },
           },
         ]);
 
@@ -174,12 +186,50 @@ const NewCase = () => {
       .catch((err) => console.log(err));
   };
 
+  console.log('====================================');
+  console.log(nodeInfoList);
+  console.log('====================================');
+
   const handleLogOut = () => {
     dispatch(logOut());
     navigate('/login');
   };
+
+  const handleOk = () => {
+    saveNode()
+      .then((res) => {
+        setConfirmLoading(false);
+        setModalText('');
+        setOpen(false);
+        message.success('Node was saved');
+      })
+      .catch((err) => {
+        setConfirmLoading(false);
+        setModalText('');
+        setOpen(false);
+        message.error(err);
+      });
+  };
+
+  const handleCancel = () => {
+    console.log('Clicked cancel button');
+    setOpen(false);
+  };
   return (
     <>
+      <Modal
+        title="Save Node"
+        open={open}
+        onOk={handleOk}
+        confirmLoading={confirmLoading}
+        onCancel={handleCancel}
+      >
+        <Input
+          onChange={(e) => setModalText(e.target.value)}
+          value={modalText}
+          placeholder="Enter Node Name"
+        ></Input>
+      </Modal>
       <Helmet>
         <title>FridayIntel-NewCase</title>
         <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
@@ -188,7 +238,7 @@ const NewCase = () => {
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-              <button className="btn-icon bookmark" onClick={saveNode}>
+              <button className="btn-icon bookmark" onClick={showModal}>
                 <svg
                   width="23"
                   height="23"
@@ -243,7 +293,7 @@ const NewCase = () => {
           <div>
             <button
               className="newcase-noti-icon"
-              onClick={(e) => themeChange(e, mode, setMode)}
+              onClick={(e) => themeChange({ e, mode, setMode })}
             >
               <img src={sun} alt="" />
             </button>
@@ -568,9 +618,10 @@ const NewCase = () => {
                 nodeInfo={nodeInfo}
                 searchRef={searchRef.current}
                 activeMenu={activeMenu}
+                mode={mode}
               />
             </div>
-            <div>
+            <div className="sideNavSection">
               {nodeInfo && activeMenu !== '' ? (
                 <NodeList
                   activeMenu={activeMenu}
@@ -604,6 +655,8 @@ const NewCase = () => {
             ) : (
               <ReactFlowProvider>
                 <CanvasArea
+                  setNodeInfo={setNodeInfo}
+                  nodeInfoList={nodeInfoList}
                   searchTerm={searchTerm}
                   nodes={nodes}
                   edges={edges}

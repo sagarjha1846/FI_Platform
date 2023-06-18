@@ -1,10 +1,4 @@
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-  useProSidebar,
-} from 'react-pro-sidebar';
+import { Button, Menu } from 'antd';
 import '../css/sidebar.css';
 import React from 'react';
 import { useState } from 'react';
@@ -17,20 +11,13 @@ import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from 'react-icons/md';
-
 const Sidenav = (props) => {
-  const { nodeInfo, setActiveMenu } = props;
-  const { collapseSidebar } = useProSidebar();
-  const [collapsed, setCollapsed] = useState(false);
-  const [toggled, setToggled] = useState(false);
+  const { nodeInfo, setActiveMenu, mode } = props;
 
-  const handleCollapsedChange = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
-  const handleToggleSidebar = (value) => {
-    setToggled(value);
-  };
-
   const menu = [
     {
       label: 'Terrorist Profilling',
@@ -120,86 +107,55 @@ const Sidenav = (props) => {
     },
   ];
 
-  const menuItems = menu.map((item) => {
-    if (item.children) {
-      return (
-        <SubMenu key={item.key} label={item.label} icon={item.icon}>
-          {item.children.map((child) => (
-            <MenuItem
-              key={child.key}
-              suffix={
-                nodeInfo && nodeInfo.data
-                  ? nodeInfo.data[child.key]?.length > 200
-                    ? '200+'
-                    : nodeInfo.data[child.key]?.length
-                  : null
-              }
-              onClick={() => setActiveMenu(child.key)}
-            >
-              {child.label}
-            </MenuItem>
-          ))}
-        </SubMenu>
-      );
-    } else {
-      return (
-        <MenuItem
-          key={item.key}
-          icon={item.icon}
-          suffix={
-            nodeInfo && nodeInfo.data
-              ? nodeInfo.data[item.key]?.length > 200
-                ? '200+'
-                : nodeInfo.data[item.key]?.length
-              : null
-          }
-          onClick={() => setActiveMenu(item.key)}
-        >
-          {item.label}
-        </MenuItem>
-      );
-    }
-  });
-  return (
-    <Sidebar
-      className="sidebar"
-      style={{ height: '100vh', position: 'absolute' }}
-      collapsed={collapsed}
-      toggled={toggled}
-      handleToggleSidebar={handleToggleSidebar}
-      handleCollapsedChange={handleCollapsedChange}
-    >
-      <main>
-        <Menu
-          onClick={() => collapseSidebar()}
-          className="collapse-sidebar_btn"
-        >
-          {collapsed ? (
-            <MenuItem
-              icon={<MdOutlineKeyboardArrowRight />}
-              onClick={handleCollapsedChange}
-            ></MenuItem>
-          ) : (
-            <MenuItem
-              suffix={<MdOutlineKeyboardArrowLeft />}
-              onClick={handleCollapsedChange}
-            >
-              <div
-                style={{
-                  padding: '9px',
-                  // textTransform: "uppercase",
-                  fontWeight: 'bold',
-                  fontSize: 14,
-                  letterSpacing: '1px',
-                }}
-              ></div>
-            </MenuItem>
-          )}
-        </Menu>
+  const getMappedMenu = (menu) => {
+    return menu.map((item) => {
+      return {
+        label: (
+          <div className=" flex justify-between items-center self-center align-middle content-center">
+            <span>{item.label}</span>
+            {nodeInfo && nodeInfo.data ? (
+              nodeInfo.data[item.key]?.length > 200 ? (
+                <span className=" w-15 h-10 grid place-content-center p-2 text-white bg-slate-400 rounded-lg">
+                  200+
+                </span>
+              ) : !nodeInfo.data[item.key]?.length ? null : (
+                <span className=" w-15 h-10 grid place-content-center p-2 text-white bg-slate-400 rounded-lg">
+                  {nodeInfo.data[item.key]?.length}
+                </span>
+              )
+            ) : null}
+          </div>
+        ),
 
-        <Menu>{menuItems}</Menu>
-      </main>
-    </Sidebar>
+        key: item.key,
+        icon: item.icon,
+        children: item.children ? getMappedMenu(item.children) : undefined,
+      };
+    });
+  };
+
+  return (
+    <div>
+      <Button
+        onClick={toggleCollapsed}
+        className=" relative right-0 mt-5 ml-5 flex justify-start collapse-sidebar_btn"
+      >
+        {collapsed ? (
+          <MdOutlineKeyboardArrowRight size={25} />
+        ) : (
+          <MdOutlineKeyboardArrowLeft size={25} />
+        )}
+      </Button>
+      <Menu
+        defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub1']}
+        mode="inline"
+        theme={mode ? 'light' : 'dark'}
+        onClick={(e) => setActiveMenu(e.key)}
+        inlineCollapsed={collapsed}
+        items={getMappedMenu(menu)}
+      />
+    </div>
   );
 };
 

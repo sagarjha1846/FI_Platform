@@ -63,11 +63,11 @@ export function themeChange({
 
   const htmlElement = document.querySelector('html');
   const label = document.querySelector('#theme-label');
-  if (mode) {
-    label.style.background = `url(${nightImage})`;
-  } else {
-    label.style.background = `url(${dayImage})`;
-  }
+  // if (mode) {
+  //   label.style.background = `url(${nightImage})`;
+  // } else {
+  //   label.style.background = `url(${dayImage})`;
+  // }
   const PRIMARY =
     getComputedStyle(htmlElement).getPropertyValue('--primary-color');
   const SECONDARY =
