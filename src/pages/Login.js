@@ -46,8 +46,8 @@ const Login = () => {
 
       apiCall.then(() => {
         arrowSvg?.classList.toggle('login-animation');
-        const checkMark = document.querySelector('.check-mark');
-        checkMark.style.display = 'revert';
+        // const checkMark = document.querySelector('.check-mark');
+        // checkMark.style.display = 'revert';
       });
       Navigate('/');
     }
@@ -460,7 +460,14 @@ const Login = () => {
                   })
                 }
               />
-              <label htmlFor="switch" id="theme-label">
+              <label
+                htmlFor="switch"
+                id="theme-label"
+                style={{
+                  backgroundImage: `url(${!mode ? nightImage : dayImage})`,
+                  backgroundSize: 'cover',
+                }}
+              >
                 <i className="fas fa-sun">
                   <svg
                     width="18"

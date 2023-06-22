@@ -40,8 +40,8 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-
-  margin: 10rem 25rem 0rem 20rem;
+  width: 38rem;
+  margin: 10rem 15rem 0rem 20rem;
 }
 
 .navbar-forgotpage {
@@ -80,7 +80,7 @@ body {
   position: relative;
   height: 2.5em;
   padding-right: 2.15em;
-  margin-right: 3.8em;
+  /* margin-right: 3.8em; */
 }
 
 .login-button-slide-fp .iconbtn {
@@ -235,17 +235,11 @@ input:checked + label .fa-moon {
   font-weight: 500;
   margin-bottom: 2.5rem;
 }
-.login-credentials-heading {
-  color: var(--primary-color-1);
-  font-weight: 400;
-  font-size: 1.6rem;
-  font-family: sans-serif;
-}
 
 .input-fp {
   border-radius: 1rem;
   height: 4rem;
-  width: 30rem;
+  /* width: 30rem; */
   color: rgba(43, 43, 43, 0.4);
   text-align: start;
   border: 2px solid var(--primary-color-1);
@@ -273,10 +267,10 @@ input:checked + label .fa-moon {
   font-size: 1.2rem;
 }
 .Forgot-Password {
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 4.8rem;
+  /* font-weight: 700; */
   margin-bottom: 0.6em;
-  line-height: 1em;
+  line-height: 3rem;
 }
 .contact-uss {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -286,7 +280,7 @@ input:checked + label .fa-moon {
   color: rgba(128, 128, 128);
   font-size: 1.5rem;
   font-weight: 400;
-  margin-left: -10rem;
+  margin-left: 2rem;
 }
 .contact-uss span {
   text-decoration: none;
@@ -298,17 +292,12 @@ input:checked + label .fa-moon {
   color: var(--primary-color);
   text-decoration: underline;
 }
-.user-img {
+/* .user-img {
   margin-top: 2rem;
   height: 95%;
   width: 50%;
   justify-content: flex-end;
-}
-
-.user-image {
-  height: 100%;
-  width: 100%;
-}
+} */
 .footer {
   font-size: 1.6rem;
   font-weight: lighter;
@@ -341,5 +330,26 @@ input:checked + label .fa-moon {
 .copy_right_text {
   font-size: 1.6rem;
   font-weight: 400;
-  margin: 5rem 0rem 0rem 2rem;
+  margin: 16.2rem 0rem 0rem 5.5rem;
+}
+.user-img-forget {
+  margin: 2.5rem;
+}
+.user-image {
+  width: 70rem;
+  height: 100%;
+}
+main {
+  width: 50% !important;
+}
+.login-credentials-heading-for {
+  color: var(--primary-color-1);
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  /* word-spacing: -1px; */
+  /* letter-spacing: -1px; */
+  line-height: 2.6rem;
+  width: 33rem;
+  /* height: -1rem; */
 }

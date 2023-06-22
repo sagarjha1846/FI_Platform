@@ -36,7 +36,6 @@ const getLayoutElements = (nodes, edges, direction = 'TB') => {
   return { nodes, edges };
 };
 
-
 export const reduceErrorHandler = (error) => {
   return (
     (error.response &&
@@ -62,7 +61,7 @@ export function themeChange({
   setMode(!mode);
 
   const htmlElement = document.querySelector('html');
-  const label = document.querySelector('#theme-label');
+  // const label = document.querySelector('#theme-label');
   // if (mode) {
   //   label.style.background = `url(${nightImage})`;
   // } else {
@@ -77,7 +76,7 @@ export function themeChange({
   htmlElement.style.setProperty('--primary-color-1', SECONDARY);
   htmlElement.style.setProperty('--secondary-color', PRIMARY);
 
-  label.style.backgroundSize = 'cover';
+  // label.style.backgroundSize = 'cover';
   let value = logoo;
 
   if (value === light) {

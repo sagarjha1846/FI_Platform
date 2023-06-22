@@ -1,6 +1,6 @@
 #footer-new-case {
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 7rem;
   bottom: 0px;

@@ -621,7 +621,7 @@ const NewCase = () => {
                 mode={mode}
               />
             </div>
-            <div className="sideNavSection">
+            <div className="sideNavSections">
               {nodeInfo && activeMenu !== '' ? (
                 <NodeList
                   activeMenu={activeMenu}

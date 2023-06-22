@@ -7,10 +7,15 @@ import { MdAlternateEmail } from 'react-icons/md';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import PopUp from '../components/PopUp';
 import { themeChange } from '../utils';
+import nightImage from '../images/night.png';
+import dayImage from '../images/day.png';
+import dark from '../images/svg/darklogo.svg';
+import light from '../images/logo.png';
 
 const Member = () => {
   const [mode, setMode] = useState(true);
   const [isshow, setIsshow] = useState(false);
+  const [logoo, setLogoo] = useState(light);
 
   const notification = () => {
     setIsshow(!isshow);
@@ -33,9 +38,28 @@ const Member = () => {
             <input
               type="checkbox"
               id="switch"
-              onClick={(event) => themeChange({ event, setMode, mode })}
+              onClick={(event) =>
+                themeChange({
+                  event,
+                  setMode,
+                  mode,
+                  nightImage,
+                  dayImage,
+                  setLogoo,
+                  logoo,
+                  light,
+                  dark,
+                })
+              }
             />
-            <label htmlFor="switch" id="theme-label">
+            <label
+              htmlFor="switch"
+              id="theme-label"
+              style={{
+                backgroundImage: `url(${!mode ? nightImage : dayImage})`,
+                backgroundSize: 'cover',
+              }}
+            >
               <i className="fas fa-sun">
                 <svg
                   width="18"

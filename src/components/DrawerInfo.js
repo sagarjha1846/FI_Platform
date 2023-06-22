@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../css/DrawerInfo.css';
 import { ImCancelCircle } from 'react-icons/im';
+import { CiSearch } from 'react-icons/ci';
 const DrawerInfo = () => {
   const [isshowDiv, setIsshowDiv] = useState(true);
 
@@ -12,11 +13,16 @@ const DrawerInfo = () => {
     <>
       {isshowDiv && (
         <section className="help">
-          <button onClick={handleClose} className="close-btn">
-            <ImCancelCircle />
-          </button>
           <div className="help2">
-            <h2>Search Guidelines</h2>
+            <div>
+              <h2>
+                Search Guidelines
+                <button onClick={handleClose} className="close-btn">
+                  <ImCancelCircle />
+                </button>
+              </h2>
+            </div>
+
             <hr />
             <h4>Keyword Search</h4>
             <p>
@@ -438,6 +444,9 @@ const DrawerInfo = () => {
                 placeholder="Type something......"
                 disabled
               />
+              <i className="drawer_search_icon">
+                <CiSearch />
+              </i>
             </div>
             <p>
               If there are too many results to study, try a more specific
@@ -478,20 +487,20 @@ const DrawerInfo = () => {
                 <br />
                 <br />
                 <br />
+                <h6 className="indicator_search">Indicator Search</h6>
               </div>
               <div className="div2">
                 <h4>Description</h4>
                 <hr />
-                <p>
-                  The search results are exact matches <br />
-                  to the keywords in “ ”
+                <p className="AND">
+                  The search results are exact matches to the keywords in “ ”
                 </p>
                 <hr />
-                <p>Search results include both X and Y</p>
+                <p className="AND">Search results include both X and Y</p>
                 <hr />
-                <p>Search results include X and Y</p>
+                <p className="AND">Search results include X and Y</p>
                 <hr />
-                <p>
+                <p className="AND">
                   Search results include X but exclude <br /> results contain Y
                 </p>
                 <hr />
@@ -520,20 +529,29 @@ const DrawerInfo = () => {
                   NOT inurl:http ://xxxxxxxxx.com
                 </li>
               </div>
+              <br />
+              <br />
+              <br />
+              <br />
             </div>
-            <h1>Indicator Search</h1>
-            <p>
-              The purpose of indicator search is to extract information that is
-              linked <br />
-              to the searched keyword. The keyword or source of the keyword
-              could <br />
-              be used to generate a list of analysis results. <br />
-              The Monography of Friday Intel button displays a list of
-              indicators that <br />
-              you can use. To search, click an indicator and enter an exact
-              keyword <br />
-              for a perfect match.
-            </p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="indicator-div">
+              <div className="indicator-search-text">
+                The purpose of indicator search is to extract information that
+                is linked <br />
+                to the searched keyword. The keyword or source of the keyword
+                could <br />
+                be used to generate a list of analysis results. <br />
+                The Monography of Friday Intel button displays a list of
+                indicators that <br />
+                you can use. To search, click an indicator and enter an exact
+                keyword <br />
+                for a perfect match.
+              </div>
+            </div>
             <p>Indicator Remarks:</p>
             <div className="parent">
               <div className="div11">
@@ -561,18 +579,18 @@ const DrawerInfo = () => {
                   total domain analysis.
                 </p>
                 <hr />
-                <p>
+                <p className="AND-1">
                   Retrieves all information obtained <br />
                   from a dark web URL and performs a <br />
                   total analysis on the searched URL.
                 </p>
                 <hr />
-                <p>
+                <p className="AND-1">
                   It is useful for tracking any mentions <br />
                   of a searched site on the dark web.
                 </p>
                 <hr />
-                <p>
+                <p className="AND-1">
                   Uses md5/sha1/sha2 to retrieve any <br />
                   files.
                 </p>

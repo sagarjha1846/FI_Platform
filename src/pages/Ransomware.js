@@ -3,16 +3,16 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: 'Ransomware Gang', flex: 1, },
+  { field: 'id', headerName: 'Ransomware Gang', flex: 1 },
   {
     field: 'lastName',
     headerName: 'Claimed Victim',
-    flex: 1
+    flex: 1,
   },
   {
     field: 'age',
     headerName: 'Creation Time',
-    flex: 1
+    flex: 1,
   },
   {
     field: 'firstName',
@@ -53,4 +53,3 @@ export default function Ransomware() {
     </Box>
   );
 }
-

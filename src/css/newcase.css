@@ -87,6 +87,12 @@
   overflow-y: scroll;
   flex-shrink: 0;
 }
+
+.sideNavSections {
+  height: 78vh;
+  /* overflow-y: scroll; */
+  flex-shrink: 0;
+}
 .canvasSection {
   height: 100%;
   width: 100%;
@@ -129,32 +135,6 @@
 }
 .react-flow__node-default {
   word-break: break-all;
-}
-
-.help {
-  display: flex;
-  background-color: var(--secondary-color);
-  position: absolute;
-  top: 9rem;
-  width: 45rem;
-  height: 75vh;
-  box-sizing: border-box;
-  transition: top 0.5s ease-out;
-  flex-direction: column;
-  color: var(--primary-color);
-  right: 0;
-  z-index: 1;
-  word-break: break-all;
-  border: 2px solid var(--primary-color);
-  border-right: none;
-  border-top: none;
-}
-.help2 {
-  overflow-y: scroll;
-  width: 44.5rem;
-  overflow-x: hidden;
-  padding-left: 5px;
-  /* border-bottom: 2x solid var(--primary-color); */
 }
 
 /* .shape3{
@@ -418,4 +398,7 @@ border-bottom: none;
   background-color: #ffffff;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 1.45rem;
+}
+.ant-btn-default svg {
+  fill: var(--primary-color);
 }

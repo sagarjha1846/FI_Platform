@@ -22,7 +22,6 @@ const OverviewFlow = (props) => {
   const [nodeClicked, setNodeClicked] = useState('');
 
   useEffect(() => {
-  
     const node =
       nodeInfoList && nodeInfoList.filter((el) => el.query === nodeClicked);
     if (node?.length === 1) {
