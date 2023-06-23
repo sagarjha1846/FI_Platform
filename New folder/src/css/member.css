@@ -1,0 +1,165 @@
+.navbar-member {
+  border-bottom: 2px solid var(--primary-color-2);
+  display: flex;
+  height: 9rem;
+
+  width: 100vw;
+  justify-content: space-between;
+}
+.member-profile {
+  display: flex;
+  position: relative;
+  align-items: center;
+  left: 5rem;
+  font-family: 'Inter';
+  gap: 1.2rem;
+  font-size: 2.2rem;
+}
+.theme-toggle-notification {
+  display: flex;
+  /* align-content: center; */
+  position: relative;
+  top: 2rem;
+  right: 10rem;
+  gap: 7.5rem;
+}
+.switch-container-member {
+  margin-top: 0.75rem;
+}
+.member-friday_intel {
+  font-weight: 200;
+  color: var(--primary-color-1);
+}
+
+.account-container {
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: unset;
+  margin-left: 7rem;
+}
+.account-heading {
+  font-size: 4.4rem;
+  letter-spacing: 1rem;
+  /* line-height: 1.5; */
+  line-height: 2;
+}
+.account-description {
+  font-size: 2.4rem;
+  font-weight: 200;
+  color: var(--primary-color-1);
+}
+.member_details {
+  display: flex;
+  margin-left: 14rem;
+}
+.agency_description {
+  margin-left: 2.5rem;
+  margin-top: 1.8rem;
+}
+.agency_description h3 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.agency_description h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.member_contact {
+  margin-left: 32rem;
+  margin-top: 1rem;
+}
+.member_contact h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transaction-details {
+  display: flex;
+  margin: 3rem 5rem 0rem 5rem;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 255, 255, 0.1);
+  height: 25rem;
+}
+.subscription_details {
+  display: flex;
+  flex-direction: column;
+}
+.subscription_details h3 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  /* margin-top: rem; */
+}
+.subscription_details div {
+  display: flex;
+  justify-content: space-around;
+  margin: 2.5rem 0 2.5rem 0;
+}
+.subscription_details h6 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.subscription_details p {
+  color: #ff0000;
+  font-size: 1.4rem;
+}
+.subscription_details button {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  height: 3.3rem;
+  width: 20rem;
+  border-radius: 1.4rem;
+  box-shadow: 0px 4px 0px var(--primary-color-1);
+  margin: 0rem 0rem 2rem 1rem;
+}
+.subscription_details a {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-left: 4rem;
+}
+
+table.GeneratedTable {
+  font-size: 1.4rem;
+  /* border-collapse: collapse; */
+  color: var(--primary-color);
+  font-weight: 400;
+  overflow: auto;
+}
+
+table.GeneratedTable td {
+  padding: 5px 6px 0px 6px;
+}
+
+table.GeneratedTable th {
+  padding: 0.5rem;
+}
+.footer-member {
+  margin-top: 6rem;
+  margin-left: 5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.notification_member {
+  display: flex;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 9.5rem;
+  width: 300px;
+  height: 500px;
+  border-radius: 40px solid var(--primary-color);
+  box-sizing: border-box;
+  flex-direction: column;
+  color: var(--primary-color);
+  opacity: 1;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  z-index: 1;
+  right: -2.5rem;
+}

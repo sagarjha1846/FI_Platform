@@ -1,0 +1,104 @@
+#footer-new-case {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw;
+  height: 7rem;
+  bottom: 0px;
+  z-index: 9999;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-icon-grp {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  gap: 15px;
+  align-items: center;
+  position: relative;
+}
+
+.logofooter {
+  height: 45.6px;
+  width: 114px;
+  margin: 0 0 0 12em;
+}
+.bottom-icon-grp button {
+  margin: 0 10px;
+  padding: 0.5em 0.5em 0.25em 0.5em;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+.bottom-icon-btn:hover {
+  background-color: var(--primary-color-1);
+  border-radius: 1em;
+}
+.bottom-icon-btn:hover svg path {
+  fill: #00ffff;
+}
+
+.bottom-icon-btn:active {
+  background-color: var(--primary-color-1);
+  border-radius: 1em;
+}
+.bottom-icon-btn:active svg path {
+  fill: #00ffff;
+}
+
+.bottom-icon-btn:focus {
+  background-color: var(--primary-color-1);
+  border-radius: 1em;
+}
+.bottom-icon-btn:focus svg path {
+  fill: #00ffff;
+}
+
+.footer-searchbox {
+  background-color: var(--secondary-color);
+  width: 26.6rem;
+  height: 45px;
+  border-radius: 15px;
+  /* left: -121px; */
+  right: 77px;
+  position: relative;
+  bottom: 22px;
+  border-bottom-left-radius: 500px;
+  border-bottom-right-radius: 500px;
+}
+.footer-logo {
+  left: 106px;
+  position: relative;
+}
+
+.footer-searchbar {
+  position: relative;
+  border: 2px solid var(--primary-color-1);
+  border-radius: 23px;
+  left: 20px;
+  height: 38px;
+  box-shadow: 0px 2px 0px var(--primary-color-1);
+  width: 230px;
+  padding-left: 3.5rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.footer-searchbar::placeholder {
+  /* margin-left: 3rem; */
+
+  color: var(--primary-color-1);
+}
+.search-icon svg {
+  height: 1.6rem;
+  width: 1.6rem;
+  position: absolute;
+  left: 3rem;
+  z-index: 1;
+  top: 1rem;
+  fill: var(--primary-color-1);
+}
+.search-icon:hover {
+  cursor: pointer;
+}

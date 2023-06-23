@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+html {
+  --primary-color: #1e1e1e;
+  --secondary-color: #ffffff;
+
+  /* for rem value */
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 35%;
+  }
+}
+
+html,
+button {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 20px;
+}
+
+body {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  font-family: 'Hammersmith One';
+  box-sizing: border-box;
+}
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 38rem;
+  margin: 10rem 15rem 0rem 20rem;
+}
+
+.navbar-forgotpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 2.5rem;
+}
+.logo img {
+  height: 4rem;
+  top: 1rem;
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Login Button Start */
+
+.login-button-slide-fp {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+  height: 2.5em;
+  padding-right: 2.15em;
+  /* margin-right: 3.8em; */
+}
+
+.login-button-slide-fp .iconbtn {
+  background: var(--secondary-color);
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.9em;
+  width: 1.9em;
+  border-radius: 0.7em;
+  right: 0.3em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.login-button-slide-fp:hover .iconbtn {
+  width: calc(100% - 0.6em);
+}
+
+.login-button-slide-fp .iconbtn svg {
+  width: 1.5em;
+  transition: transform 0.3s;
+  color: var(--primary-color);
+}
+
+.login-button-slide-fp:hover .iconbtn svg path {
+  fill: var(--primary-color);
+}
+
+.login-button-slide-fp:hover .iconbtn svg {
+  transform: translateX(0.1em);
+}
+
+.login-button-slide-fp:active .iconbtn {
+  transform: scale(0.95);
+}
+
+/* Login Button End */
+
+.check-mark {
+  height: 1.7rem;
+  width: 2rem;
+  display: none;
+  transform: rotate(0.02turn);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 5px 0px #00ffff);
+  transition: filter 0.3s cubic-bezier(0, 0.74, 0.58, 1),
+    margin 0.3s cubic-bezier(0.45, 0.01, 0.58, 1);
+  margin-left: 34rem;
+}
+
+.theme-toggle:hover {
+  filter: none;
+  transform: translateY(1px);
+}
+
+label {
+  display: flex;
+  width: 8rem;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 8px;
+  border-radius: 5rem;
+  cursor: pointer;
+  position: relative;
+  border: inset 1px solid var(--secondary-color);
+  background-image: url('../images/day.png');
+  background-size: cover;
+}
+
+label i {
+  font-size: 1.8rem;
+}
+label .fa-sun {
+  transition: 0.8s;
+  padding-top: 0.5rem;
+}
+label .fa-moon {
+  color: var(--secondary-color);
+  transition: 0.8s;
+  padding-top: 0.5rem;
+}
+label .fa-moon svg {
+  height: 2.6rem;
+  width: 2.6rem;
+}
+label .fa-sun svg {
+  height: 2.6rem;
+  width: 2.6rem;
+}
+label .fa-moon svg > * {
+  fill: var(--secondary-color);
+  stroke: var(--secondary-color);
+}
+label .fa-sun svg > * {
+  fill: #ffc187;
+  stroke: #ffc187;
+}
+label .ball {
+  display: none;
+}
+
+label .fa-sun {
+  opacity: 1;
+}
+
+input:checked + label .fa-sun {
+  opacity: 0;
+}
+
+label .fa-moon {
+  opacity: 0;
+}
+input:checked + label .fa-moon {
+  opacity: 1;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(40px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(40px);
+}
+
+#switch {
+  display: none;
+}
+
+label .fa-moon {
+  transform: translateX(-43px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(0);
+}
+
+.welcome-back {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.input-fp {
+  border-radius: 1rem;
+  height: 4rem;
+  /* width: 30rem; */
+  color: rgba(43, 43, 43, 0.4);
+  text-align: start;
+  border: 2px solid var(--primary-color-1);
+  padding: 5px;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-bottom: 1em;
+}
+.email-address,
+.password {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.login-checkbox {
+  margin: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.remember-checkbox {
+  margin-bottom: -5px;
+}
+.remember-me {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+.Forgot-Password {
+  font-size: 4.8rem;
+  /* font-weight: 700; */
+  margin-bottom: 0.6em;
+  line-height: 3rem;
+}
+.contact-uss {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 1.8rem;
+  text-align: center;
+  color: rgba(128, 128, 128);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-left: 2rem;
+}
+.contact-uss span {
+  text-decoration: none;
+  color: rgba(128, 128, 128);
+  font-weight: 600;
+}
+.contact-uss:hover span {
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+/* .user-img {
+  margin-top: 2rem;
+  height: 95%;
+  width: 50%;
+  justify-content: flex-end;
+} */
+.footer {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  margin: 5rem;
+  margin-left: 3rem;
+}
+/* Animation */
+@keyframes loading {
+  0% {
+    transform: rotate(0turn);
+  }
+  25% {
+    transform: rotate(0.25turn);
+  }
+  50% {
+    transform: rotate(0.5turn);
+  }
+  75% {
+    transform: rotate(0.75turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.ForgotPassword {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.copy_right_text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 16.2rem 0rem 0rem 5.5rem;
+}
+.user-img-forget {
+  margin: 2.5rem;
+}
+.user-image {
+  width: 70rem;
+  height: 100%;
+}
+.login-container {
+  width: 50% !important;
+}
+.login-credentials-heading-for {
+  color: var(--primary-color-1);
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  /* word-spacing: -1px; */
+  /* letter-spacing: -1px; */
+  line-height: 2.6rem;
+  width: 33rem;
+  /* height: -1rem; */
+}
