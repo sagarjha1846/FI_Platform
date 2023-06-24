@@ -8,7 +8,7 @@
 .case_cards_loadcase {
   height: 160px;
   width: 220px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   border-radius: 8px;
   margin: 3.5rem 0rem 0rem 2rem;
   display: flex;
@@ -38,4 +38,10 @@
 .css-de9k3v-MuiDataGrid-selectedRowCount,
 .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   color: var(--primary-color);
+}
+.css-1kwdphh-MuiDataGrid-virtualScrollerContent {
+  width: 100% !important;
+}
+.css-6h1dhi-MuiDataGrid-root {
+  border-color: var(--primary-color-2) !important;
 }

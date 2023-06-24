@@ -33,7 +33,7 @@ const DrawerInfo = () => {
             <br />
             <div className="searchbar-box-help">
               <svg
-                className="pt-2"
+                className="pt-2 drawer-search"
                 width="27"
                 height="24"
                 viewBox="0 0 27 24"

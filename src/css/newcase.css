@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   height: 90px;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color-2);
 }
 
 .notification_btn {
@@ -87,12 +87,27 @@
   overflow-y: scroll;
   flex-shrink: 0;
 }
+.sideNavSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sideNavSection::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
+}
 
 .sideNavSections {
   height: 78vh;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   flex-shrink: 0;
 }
+.sideNavSections::-webkit-scrollbar {
+  width: 6px;
+}
+.sideNavSections::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+}
+
 .canvasSection {
   height: 100%;
   width: 100%;
@@ -157,13 +172,13 @@ border-bottom: none;
   top: 9.5rem;
   width: 300px;
   height: 500px;
-  border-radius: 40px solid var(--primary-color);
+  border-radius: 40px solid var(--primary-color-2);
   box-sizing: border-box;
   flex-direction: column;
   color: var(--primary-color);
   opacity: 1;
   border-radius: 10px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   z-index: 1;
   right: 8.5rem;
 }
@@ -176,7 +191,7 @@ border-bottom: none;
   width: 30px;
   height: 30px;
   background: var(--secondary-color);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   transform: rotate(45deg);
   top: -16px;
   border-radius: 2px;
@@ -190,9 +205,9 @@ border-bottom: none;
   position: absolute;
   background-color: var(--secondary-color);
   width: 25rem;
-  height: 25rem;
+  height: 27rem;
   top: 93px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   z-index: 1;
   /* margin-left: 1160px; */
   right: 5rem;
@@ -213,7 +228,8 @@ border-bottom: none;
 }
 .pro-data article {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  gap: 1rem;
 }
 .pro-data article h4 {
   font-size: 1.4rem;
@@ -226,10 +242,10 @@ border-bottom: none;
 }
 .logout-btn {
   display: flex;
-  padding: 3rem 0rem 0rem 13rem;
+  padding: 3.5rem 0rem 0rem 13rem;
   align-items: center;
   gap: 0.75rem;
-  height: 4rem;
+  /* height: 4rem; */
 }
 .logout-btn:hover {
   cursor: pointer;
@@ -237,6 +253,7 @@ border-bottom: none;
 .logout-btn h4 {
   font-size: 1.4rem;
   font-weight: 400;
+  width: 6.5rem;
 }
 /* .logout-icon{
   height: 1rem;
@@ -246,7 +263,7 @@ border-bottom: none;
   position: absolute;
   width: 30px;
   height: 30px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   transform: rotate(45deg);
   background: var(--secondary-color);
   top: -16.125px;
@@ -296,10 +313,11 @@ border-bottom: none;
 
 .delete-noti-btn {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.5rem;
   right: 1rem;
   display: flex;
   font-size: 1.8rem;
+  align-items: center;
 }
 .delete-noti-btn:hover {
   cursor: pointer;
@@ -328,6 +346,8 @@ border-bottom: none;
   /* justify-content: space-around;
    */
   align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
 }
 .notifications svg:hover {
   cursor: pointer;
@@ -368,14 +388,15 @@ border-bottom: none;
 .member_btn_membership {
   width: 18rem;
   height: 3.9rem;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   font-weight: 600;
   border-radius: 1.2rem;
   position: relative;
   top: 1.5rem;
   left: 1rem;
   box-shadow: 0px 3px 0px 0px var(--primary-color-1);
+  border: 1px solid var(--primary-color);
   /* syntax: ; */
 }
 .member_btn_membership:hover {
@@ -400,5 +421,17 @@ border-bottom: none;
   border-bottom-left-radius: 1.45rem;
 }
 .ant-btn-default svg {
-  fill: var(--primary-color);
+  fill: var(--primary-color-2);
+}
+.noti-icon-delete {
+  border: 1px solid var(--primary-color-2);
+  border-radius: 50%;
+  margin: 1rem;
+  padding: 0.4rem;
+}
+.place-content-center {
+  margin: 2rem 0rem;
+}
+.place-content-center li span {
+  color: var(--primary-color);
 }

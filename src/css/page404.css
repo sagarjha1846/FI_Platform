@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
-.main {
+.main-404 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,11 +21,12 @@ h5 {
   font-size: 48px;
   display: block;
   margin-bottom: 50px;
+  color: var(--primary-color);
 }
 .section404 {
   height: 300px;
   width: 400px;
-  background-image: url(../images/page404.jpeg);
+  /* background-image: url(../images/page404.jpeg); */
   background-size: cover;
   /* position: absolute; */
 }
@@ -48,10 +49,10 @@ h5 {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  margin-top: 235px;
+  margin-top: -5rem;
   margin-left: 150px;
   color: var(--secondary-color);
-  background: var(--primary-color-1);
+  background: var(--primary-color);
   border-radius: 1.4rem;
   border: 1px solid var(--secondary-color);
   filter: drop-shadow(0px 5px 0px rgba(0, 0, 0, 0.6));

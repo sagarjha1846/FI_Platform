@@ -1,7 +1,7 @@
 .searchbar-box-help {
   display: flex;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0px 4px 0px var(--primary-color);
+  border: 1px solid var(--primary-color-2);
+  box-shadow: 0px 4px 0px var(--primary-color-2);
   border-radius: 30px;
   height: 33px;
   width: 350px;
@@ -63,10 +63,10 @@
   height: 3rem;
   border-radius: 9.1rem;
   border: 1px solid var(--secondary-color);
-  fill: var(--primary-color);
+  fill: var(--primary-color-2);
 }
 .close-btn svg {
-  fill: var(--primary-color);
+  fill: var(--primary-color-2);
 }
 .help {
   display: flex;
@@ -82,11 +82,29 @@
   right: 0;
   z-index: 1;
   word-break: break-all;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
   border-right: none;
   border-top: none;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+.help::-webkit-scrollbar {
+  width: 6px;
+}
+
+.help::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
+}
+
+.sideNavSection::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
+}
+
+.sideNavSection::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
 }
 .help2 {
   padding-left: 1rem;
@@ -94,12 +112,12 @@
 hr {
   color: var(--primary-color);
   border-top-width: 1px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--primary-color-2);
 }
 .drawer_search_icon svg {
   height: 2.2rem;
   width: 2.2rem;
-  color: var(--primary-color);
+  color: var(--primary-color-2);
   margin: 5px 17px 0px 0px;
 }
 .indicator_search {
@@ -116,4 +134,7 @@ hr {
 }
 .AND-1 {
   margin: 1rem 0rem;
+}
+.drawer-search {
+  margin: 0rem 0.7rem 0rem 0.7rem;
 }

@@ -61,22 +61,24 @@ export function themeChange({
   setMode(!mode);
 
   const htmlElement = document.querySelector('html');
-  // const label = document.querySelector('#theme-label');
-  // if (mode) {
-  //   label.style.background = `url(${nightImage})`;
-  // } else {
-  //   label.style.background = `url(${dayImage})`;
-  // }
   const PRIMARY =
     getComputedStyle(htmlElement).getPropertyValue('--primary-color');
   const SECONDARY =
     getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
+  // const PRIMARY_1 = getComputedStyle(htmlElement).getPropertyValue('--primary-color-1');
+  const SECONDARY_2 = getComputedStyle(htmlElement).getPropertyValue(
+    '--secondary-color-1',
+  );
+  const PRIMARY_2 =
+    getComputedStyle(htmlElement).getPropertyValue('--primary-color-2');
 
   htmlElement.style.setProperty('--primary-color', SECONDARY);
-  htmlElement.style.setProperty('--primary-color-1', SECONDARY);
   htmlElement.style.setProperty('--secondary-color', PRIMARY);
+  htmlElement.style.setProperty('--primary-color-1', SECONDARY);
+  // htmlElement.style.setProperty('--primary-color-1', SECONDARY);
+  htmlElement.style.setProperty('--secondary-color-1', PRIMARY_2);
+  htmlElement.style.setProperty('--primary-color-2', SECONDARY_2);
 
-  // label.style.backgroundSize = 'cover';
   let value = logoo;
 
   if (value === light) {

@@ -61,7 +61,7 @@ const Login = () => {
 
   return (
     <div className="App">
-      <main>
+      <main className="login-container">
         <nav className="navbar-login">
           <section className="logo">
             <svg

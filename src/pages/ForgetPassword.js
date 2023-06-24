@@ -22,7 +22,7 @@ const ForgetPassword = () => {
       <Helmet>
         <title>FridayIntel-ForgetPassword</title>
       </Helmet>
-      <main>
+      <main className="login-container">
         <nav className="navbar-forgotpage">
           <section className="logo">
             <svg

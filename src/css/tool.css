@@ -1,18 +1,13 @@
 .navigation {
   color: var(--primary-color);
-  /* border: 1px solid transparent; */
   height: 40rem;
   width: 7rem;
   border-radius: 12px;
-  border-color: var(--primary-color);
-  /* margin: -5px 60
-  px -4px 8px; */
-  /* padding: 4px; */
+  border-color: var(--primary-color-2);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  /* gap: 0.8rem; */
   background-color: var(--secondary-color);
 }
 
@@ -25,7 +20,7 @@ nav .menu {
 }
 
 .navigation {
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color-2);
 }
 .menu {
   margin-top: 2.5em;

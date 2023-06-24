@@ -4,6 +4,8 @@ html {
   --primary-color: #1c1c1c;
   --primary-color-1: rgba(43, 43, 43, 0.5);
   --secondary-color: #ffffff;
+  --secondary-color-1: #00ffff;
+  --primary-color-2: #000000e6;
 
   /* for rem value */
   font-size: 62.5%;
@@ -269,8 +271,8 @@ input:checked + label .fa-moon {
   font-size: 4.8rem;
   font-weight: 400;
   margin-bottom: 3rem;
-  word-spacing: 5px;
-  letter-spacing: 2px;
+  /* word-spacing: 5px;
+  letter-spacing: 2px; */
 }
 .login-credentials-heading {
   color: var(--primary-color-1);
@@ -285,7 +287,7 @@ input:checked + label .fa-moon {
   border-radius: 1rem;
   height: 4rem;
   /* width: 30rem; */
-  color: var(--primary-color-1);
+  color: rgb(0, 0, 0);
   text-align: start;
   border: 2px solid var(--primary-color-1);
   padding: 5px;
