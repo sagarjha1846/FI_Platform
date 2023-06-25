@@ -1,5 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { createRef, useCallback, useRef, useState } from 'react';
+import React, {
+  createRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Helmet } from 'react-helmet';
 
 import {
@@ -16,7 +22,7 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements, themeChange } from '../utils';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import DrawerInfo from '../components/DrawerInfo';
 import axios from 'axios';
 import { MagnifyingGlass } from 'react-loader-spinner';
@@ -36,9 +42,12 @@ import { logOut } from '../store/features/auth/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input, Modal, message } from 'antd';
 import { async } from 'q';
+import PopUp from '../components/PopUp';
 // import { useEffect } from 'react';
 
 const NewCase = () => {
+  const location = useLocation();
+
   const { ROUTES, backendURL } = constants;
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
@@ -68,10 +77,16 @@ const NewCase = () => {
   const [modalText, setModalText] = useState('');
   const [nodeInfoList, setNodeInfoList] = useState([]);
   const [activeButton, setActiveButton] = useState(null);
-  const showModal = () => {
-    setOpen(true);
-  };
 
+  const [caseName, setCaseName] = useState('');
+
+  useEffect(() => {
+    if (location?.state?.values?.nodeName) {
+      setCaseName(location?.state?.values?.nodeName);
+    } else {
+      navigate('/');
+    }
+  }, [location, navigate]);
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
@@ -126,7 +141,7 @@ const NewCase = () => {
         edges,
         nodes,
         caseid: uuidv4(),
-        casename: modalText,
+        casename: caseName,
       };
       const result = await axios.post(`${backendURL}newcase.php`, data, {
         headers: {
@@ -173,10 +188,6 @@ const NewCase = () => {
       .catch((err) => console.log(err));
   };
 
-  console.log('====================================');
-  console.log(nodeInfoList);
-  console.log('====================================');
-
   const handleLogOut = () => {
     dispatch(logOut());
     navigate('/login');
@@ -220,21 +231,9 @@ const NewCase = () => {
   const handleButtonClick = (button) => {
     setActiveButton((prevButton) => (prevButton === button ? null : button));
   };
+
   return (
     <>
-      <Modal
-        title="Save Node"
-        open={open}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-      >
-        <Input
-          onChange={(e) => setModalText(e.target.value)}
-          value={modalText}
-          placeholder="Enter Node Name"
-        ></Input>
-      </Modal>
       <Helmet>
         <title>FridayIntel-NewCase</title>
         <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
@@ -243,7 +242,7 @@ const NewCase = () => {
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-              <button className="btn-icon bookmark" onClick={showModal}>
+              <button className="btn-icon bookmark" onClick={handleOk}>
                 <svg
                   width="23"
                   height="23"
@@ -272,14 +271,14 @@ const NewCase = () => {
               <Link to={ROUTES.home}>
                 <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
               </Link>
-              <h3 className="case-no">Case&#160;1</h3>
+              <h3 className="case-no">{caseName}</h3>
             </div>
           </div>
         </section>
         <section className="notification_btn">
           <div>
             <button
-              className="newcase-noti-icon"
+              className="newcase-noti-icon btn-icon"
               onClick={() => handleButtonClick('opendrawer')}
             >
               <img src={bookmark} alt="" />
@@ -300,7 +299,7 @@ const NewCase = () => {
           </form>
           <div>
             <button
-              className="newcase-noti-icon"
+              className="newcase-noti-icon btn-icon"
               onClick={(e) => themeChange({ e, mode, setMode })}
             >
               <img src={sun} alt="" />
@@ -716,6 +715,7 @@ const NewCase = () => {
               </ReactFlowProvider>
             )}
           </div>
+          <PopUp />
 
           <div className="toolSection-container">
             <div className="toolSection">
