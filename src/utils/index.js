@@ -79,13 +79,13 @@ export function themeChange({
   htmlElement.style.setProperty('--secondary-color-1', PRIMARY_2);
   htmlElement.style.setProperty('--primary-color-2', SECONDARY_2);
 
-  let value = logoo;
+  // let value = logoo;
 
-  if (value === light) {
-    setLogoo(dark);
-  } else {
-    setLogoo(light);
-  }
+  // if (value === light) {
+  //   setLogoo(dark);
+  // } else {
+  //   setLogoo(light);
+  // }
 }
 
 export { getLayoutElements };

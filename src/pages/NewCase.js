@@ -269,7 +269,7 @@ const NewCase = () => {
             </div>
             <div className="dashboard-cases">
               <Link to={ROUTES.home}>
-                <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
+                <h3 className="dashboard-title">Dashboard&#160;/</h3>
               </Link>
               <h3 className="case-no">{caseName}</h3>
             </div>
