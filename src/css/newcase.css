@@ -86,6 +86,7 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
+  border-right: 2px  solid var(--primary-color-2);
 }
 .sideNavSection::-webkit-scrollbar {
   width: 6px;
@@ -100,12 +101,13 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
+  /* border-right: 2px solid var(--primary-color-2); */
 }
 .sideNavSections::-webkit-scrollbar {
   width: 6px;
 }
 .sideNavSections::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color-2);
+  background-color: var(--primary-color--2);
 }
 
 .canvasSection {
@@ -148,8 +150,18 @@
 .react-flow__panel {
   display: none !important;
 }
+.react-flow__handle{
+  border: 1px solid var(--primary-color-2);
+  background-color: var(--secondary-color);
+}
 .react-flow__node-default {
   word-break: break-all;
+  border: 1px solid var(--primary-color-2) !important;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+.react-flow__edge-path{
+  stroke: var(--primary-color-2);
 }
 
 /* .shape3{

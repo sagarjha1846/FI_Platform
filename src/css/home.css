@@ -60,4 +60,5 @@
   padding: 3.5rem 0rem 0rem 13rem;
   align-items: center;
   gap: 0.75rem;
+  cursor: pointer;
 }

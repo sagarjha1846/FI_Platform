@@ -36,6 +36,7 @@ import { logOut } from '../store/features/auth/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input, Modal, message } from 'antd';
 import { async } from 'q';
+import PopUp from '../components/PopUp';
 // import { useEffect } from 'react';
 
 const NewCase = () => {
@@ -270,16 +271,16 @@ const NewCase = () => {
             </div>
             <div className="dashboard-cases">
               <Link to={ROUTES.home}>
-                <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
+                <h3 className="dashboard-title">Dashboard&#160;/</h3>
               </Link>
-              <h3 className="case-no">Case&#160;1</h3>
+              <h3 className="case-no">CASE&#160;1</h3>
             </div>
           </div>
         </section>
         <section className="notification_btn">
           <div>
             <button
-              className="newcase-noti-icon"
+              className="newcase-noti-icon btn-icon"
               onClick={() => handleButtonClick('opendrawer')}
             >
               <img src={bookmark} alt="" />
@@ -300,7 +301,7 @@ const NewCase = () => {
           </form>
           <div>
             <button
-              className="newcase-noti-icon"
+              className="newcase-noti-icon btn-icon"
               onClick={(e) => themeChange({ e, mode, setMode })}
             >
               <img src={sun} alt="" />
@@ -716,6 +717,7 @@ const NewCase = () => {
               </ReactFlowProvider>
             )}
           </div>
+            <PopUp />
 
           <div className="toolSection-container">
             <div className="toolSection">
