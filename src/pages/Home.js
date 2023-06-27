@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 // import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import constants from '../constant/routesConstant';
 import '../css/home.css';
-import { Button, Form, Input, Modal } from 'antd';
+import { Form } from 'antd';
 import ModalView from '../components/Modal';
 // import img from '../images/case-card.png'
 
-const Home = () => {
+const Home = ({ caseName, setCaseName }) => {
   const [form] = Form.useForm();
   const [openModal, setOpenModal] = useState(false);
-  const [caseName, setCaseName] = useState('');
   const { ROUTES } = constants;
   const navigate = useNavigate();
 
@@ -24,7 +22,7 @@ const Home = () => {
       {/* <Helmet>
         <title>FridayIntel-Home</title>
       </Helmet> */}
-      <Navbar />
+
       <ModalView
         setOpenModal={setOpenModal}
         openModal={openModal}
